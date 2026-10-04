@@ -7,6 +7,11 @@ The system implements multi-factor signal ranking, dynamic regime filtering, vol
 ## 1. Investment Thesis and Strategy Logic
 Intermediate term outperformance tends to persist over 3-12 month horizons. However, raw momentum in emerging markets like India suffers from severe tail risk events and high turnover during chop.
 
+This model addresses these vulnerabilities by:
+- **Operating on weekly Timeframe:** It filters out daily market noise and reduces transaction drag while allowing momentum trends spanning months to play out.
+- **Cross-Sectional Ranking:** Identifies leaders relative to the Nifty 500 universe rather than relying solely on absolute price trend.
+- **Regime Filtering:** Allocates dynamically to cash or defensive holdings when broad market index momentum breaks down.
+
 ## Performance Summary (2017 – 2026 Unified Run)
 
 | Metric | Result |
