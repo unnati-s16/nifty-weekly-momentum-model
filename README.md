@@ -1,38 +1,11 @@
-# nifty-weekly-momentum-model
-NSE weekly cross sectional momentum trading model with Nifty 200 SMA filter
-# NSE Weekly Cross-Sectional Momentum Strategy
+# Weekly Momentum & Relative Strength Model (Nifty 500)
 
-A quantitative multi-block weekly momentum trading model tested across NSE equities, incorporating relative strength ranking and a broad-market regime filter.
+A quantitative backtesting framework that evaluates cross-sectional momentum and relative strength across the Nifty 500 universe on weekly OHLCV data.
 
----
+The system implements multi-factor signal ranking, dynamic regime filtering, volatility adjusted position sizing and transaction cost accounting to simulate realistic deployment.
 
-## Strategy Rules
-
-### 1. Universe Selection
-* **Lookback Buffer:** Top 500 liquid stocks selected based on total turnover over a 1-year lookback buffer.
-* **Testing Structure:** Multi-block 2-year rolling execution blocks to mitigate lookahead and survivorship bias.
-
-### 2. Market Regime Filter
-* **Benchmark:** Nifty 50 / BSE Sensex against its 200-day Simple Moving Average (SMA).
-* **Filter Rule:** New trade entries are strictly permitted only when the index trades above its 200-day SMA.
-
-### 3. Entry & Execution Logic
-* **Signal Scan:** Friday weekly close.
-* **Execution:** Monday market open (with slippage and transaction fee modeling).
-* **Entry Filters:**
-  * Weekly RSI(14) > 60
-  * Weekly Supertrend(8, 2.5) Direction == Bullish (1)
-  * Cross-Sectional Relative Strength (RS) Percentile ≥ 92
-* **Portfolio Sizing:** Maximum 15 positions, equally allocated across available cash.
-
-### 4. Exit Rules
-* Exit on Monday open if:
-  * Individual stock RSI drops below 40.
-  * Supertrend reverses to Bearish (-1).
-  * Benchmark index breaks below its 200-day SMA.
-  * End of 2-year block force-liquidation.
-
----
+## 1. Investment Thesis and Strategy Logic
+Intermediate term outperformance tends to persist over 3-12 month horizons. However, raw momentum in emerging markets like India suffers from severe tail risk events and high turnover during chop.
 
 ## Performance Summary (2017 – 2026 Unified Run)
 
